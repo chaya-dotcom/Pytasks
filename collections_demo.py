@@ -49,4 +49,5 @@ print("\nTuple remains unchanged:", college_info)
 
 # STEP 10: Formatted Output
 print(f"\nFinal Students List: {students}")
-#print("\n------ TASK COMPLETED ------")
+print("\n------ TASK COMPLETED ------")
+
