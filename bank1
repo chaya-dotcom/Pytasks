@@ -1,0 +1,51 @@
+class BankAccount:
+
+    # constructor
+    def __init__(self, name, balance):
+        self.name = name
+        self.balance = balance
+
+    # create account
+    def create_account(self):
+        print("\nAccount Created Successfully")
+        print("Account Holder:", self.name)
+        print("Opening Balance:", self.balance)
+
+    # deposit
+    def deposit(self, amount):
+        self.balance += amount
+        print("Deposited:", amount)
+
+    # withdraw
+    def withdraw(self, amount):
+        if amount <= self.balance:
+            self.balance -= amount
+            print("Withdrawn:", amount)
+        else:
+            print("Low balance")
+
+    # show balance
+    def show_balance(self):
+        print("Current Balance:", self.balance)
+
+
+# user input
+name = input("Enter name: ")
+balance = float(input("Enter opening balance: "))
+
+# object
+acc = BankAccount(name, balance)
+
+# show account created
+acc.create_account()
+
+# deposit input
+dep = float(input("\nEnter deposit amount: "))
+acc.deposit(dep)
+
+# withdraw input
+wd = float(input("Enter withdraw amount: "))
+acc.withdraw(wd)
+
+# final balance
+acc.show_balance()
