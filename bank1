@@ -1,3 +1,5 @@
+# bank system using OOP
+
 class BankAccount:
 
     # constructor
@@ -7,8 +9,8 @@ class BankAccount:
 
     # create account
     def create_account(self):
-        print("\nAccount Created Successfully")
-        print("Account Holder:", self.name)
+        print("\nAccount Created")
+        print("Name:", self.name)
         print("Opening Balance:", self.balance)
 
     # deposit
@@ -26,26 +28,47 @@ class BankAccount:
 
     # show balance
     def show_balance(self):
-        print("Current Balance:", self.balance)
+        print("Balance:", self.balance)
 
 
-# user input
-name = input("Enter name: ")
-balance = float(input("Enter opening balance: "))
+# child class
+class SavingsAccount(BankAccount):
 
-# object
-acc = BankAccount(name, balance)
+    # override
+    def show_balance(self):
+        print("Savings Balance:", self.balance)
 
-# show account created
-acc.create_account()
 
-# deposit input
-dep = float(input("\nEnter deposit amount: "))
-acc.deposit(dep)
+# first account
+name1 = input("Enter first name: ")
+bal1 = float(input("Enter opening balance: "))
 
-# withdraw input
-wd = float(input("Enter withdraw amount: "))
-acc.withdraw(wd)
+acc1 = BankAccount(name1, bal1)
+acc1.create_account()
 
-# final balance
-acc.show_balance()
+dep1 = float(input("Deposit amount: "))
+acc1.deposit(dep1)
+
+wd1 = float(input("Withdraw amount: "))
+acc1.withdraw(wd1)
+
+acc1.show_balance()
+
+
+print("\n-----------------\n")
+
+
+# second account
+name2 = input("Enter second name: ")
+bal2 = float(input("Enter opening balance: "))
+
+acc2 = SavingsAccount(name2, bal2)
+acc2.create_account()
+
+dep2 = float(input("Deposit amount: "))
+acc2.deposit(dep2)
+
+wd2 = float(input("Withdraw amount: "))
+acc2.withdraw(wd2)
+
+acc2.show_balance()
